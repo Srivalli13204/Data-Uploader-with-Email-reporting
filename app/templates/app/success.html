@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload Successful</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(to bottom right, white, rgb(218, 192, 218));
+                color: white;
+                margin: 0;
+                justify-content: center;
+                align-items: center;
+                height: 1250vh;
+                text-align: center;
+            }
+
+            table {
+            border-collapse: collapse;
+            max-width: 50%;
+            margin: auto;
+            }
+            th {
+            background-color: yellow;
+            text-align: center;
+            }
+            th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            }
+
+            .container {
+                margin-top: 20px;
+                background-color: rgb(201, 145, 201);
+                padding: 40px 40px 40px 30px;
+                border-radius: 25px;
+                box-shadow: 0 4px 8px white;
+                max-width: 800px;
+                width: 80%;
+            }
+
+            h1 {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                font-size: 3rem;
+                text-shadow: 3px 3px rgb(62, 60, 60);
+            }
+
+            h2 {
+                text-align: start;
+                margin-bottom: 20px;
+                font-size: 2rem;
+                text-shadow: 2px 2px rgb(62, 60, 60);
+            }
+
+            h3 {
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 2rem;
+                color: black;
+            }
+
+            ul {
+                text-align: justify;
+                margin-bottom: 5px;
+            }
+
+            .button {
+                background-color: rgb(201, 158, 201);
+                color: black;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-size: 1rem;
+                cursor: pointer;
+                display: inline-block;
+                transition: all 0.3s ease;
+                margin-bottom: 20px;
+            }
+
+            .button:hover {
+                background-color: rgb(109, 42, 109);
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>File Upload Successful!!!</h1>
+            <h2>Summary Report :</h2>
+            <ul>
+                <li>Number of Rows : {{summary.rows}}</li>
+                <li>Number of Columns : {{summary.columns}}</li>
+            </ul>
+        </div>
+        
+            <h3>For Uploaded Data :</h3>
+            {{ table | safe }}
+        
+        <a href="{% url 'upload' %}" class="button">Upload another file</a>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Upload</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(to bottom right, #e8eadb, rgb(174, 93, 174));
+                color: white;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+
+            .container {
+                background-color: rgb(182, 120, 182);
+                padding: 40px 40px 40px 40px;
+                border-radius: 25px;
+                box-shadow: 0 4px 8px white;
+                max-width: 800px;
+                width: 80%;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 3rem;
+                text-shadow: 3.5px 3.5px rgb(62, 60, 60);
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            button {
+                background-color: beige;
+                color: black;
+                border: none;
+                padding: 10px 5px;
+                border-radius: 30px;
+                text-decoration: none;
+                max-width: 500px;
+                width: 100%;
+                font-size: 0.8rem;
+                cursor: pointer;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+
+            button:hover {
+                background-color: rgb(109, 42, 109);
+                color: white;
+            }
+
+            input, select, textarea {
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                width: 100%;
+            }
+
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Upload a Excel / CSV File</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_table}}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </body>
+</html>
