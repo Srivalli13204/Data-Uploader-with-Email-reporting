@@ -37,7 +37,7 @@ def upload(request):
                 subject='Python Assignment - Pichika Parimala Durga Srivalli',
                 body=text,
                 from_email='isiri1320@gmail.com',
-                to=['isiri132004@gmail.com'],
+                to=['tech@themedius.ai'],
             )
             email.attach_alternative(content, "text/html")
             email.send()
