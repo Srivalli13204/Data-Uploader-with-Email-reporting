@@ -34,10 +34,10 @@ def upload(request):
             text = strip_tags(content)
 
             email = EmailMultiAlternatives(
-                subject='Python Assignment - Pichika Parimala Durga Srivalli',
+                subject='Python Assignment - Your Name',
                 body=text,
-                from_email='isiri1320@gmail.com',
-                to=['tech@themedius.ai'],
+                from_email='Sender Email',
+                to=['Receiver Email'],
             )
             email.attach_alternative(content, "text/html")
             email.send()
