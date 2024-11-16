@@ -1,4 +1,4 @@
-# Python project name : DevTest
+# Python project name : Uploading Files with Email reporting
 
 This task is to evaluate skills in Django development, GIT knowledge, and deployment.
 
@@ -8,7 +8,7 @@ Assignment :
 3) Emailing the summary as body text.
 4) Emailing subject will be Python Assignment - Pichika Parimala Durga Srivalli.
 5) Creating a GIT repository and pushing the code.
-6) After pusi=hing the code deploying on open source server.
+6) After pushing the code deploying on open source server.
 
 This web application collects user inputs(Excel/CSV)
 
