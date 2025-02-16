@@ -1,14 +1,10 @@
-# Python project name : Uploading Files with Email reporting
+# Project name : Data Uploader with Email reporting
 
-This task is to evaluate skills in Django development, GIT knowledge, and deployment.
-
-Assignment :
 1) Creating a web page to develop a Django-based web page that prompts users for uploading an Excel/CSV file.
 2) Preparing a summary report for the uploaded data file.
 3) Emailing the summary as body text.
-4) Emailing subject will be Python Assignment - Pichika Parimala Durga Srivalli.
-5) Creating a GIT repository and pushing the code.
-6) After pushing the code deploying on open source server.
+4) Creating a GIT repository and pushing the code.
+5) After pushing the code deploying on open source server.
 
 This web application collects user inputs(Excel/CSV)
 
