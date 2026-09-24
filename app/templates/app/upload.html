@@ -1,86 +1,188 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>File Upload</title>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                background: linear-gradient(to bottom right, #e8eadb, rgb(174, 93, 174));
-                color: white;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                text-align: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
 
-            .container {
-                background-color: rgb(182, 120, 182);
-                padding: 40px 40px 40px 40px;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px white;
-                max-width: 800px;
-                width: 80%;
-            }
+```
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-            h1 {
-                margin-bottom: 20px;
-                font-size: 3rem;
-                text-shadow: 3.5px 3.5px rgb(62, 60, 60);
-            }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        background: #f4f7fb;
+        color: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
+    .wrapper {
+        width: 90%;
+        max-width: 800px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+    }
 
-            button {
-                background-color: beige;
-                color: black;
-                border: none;
-                padding: 10px 5px;
-                border-radius: 30px;
-                text-decoration: none;
-                max-width: 500px;
-                width: 100%;
-                font-size: 0.8rem;
-                cursor: pointer;
-                display: inline-block;
-                transition: all 0.3s ease;
-            }
+    .header {
+        background: #1f4e79;
+        color: white;
+        padding: 18px 30px;
+        font-size: 18px;
+        font-weight: bold;
+    }
 
-            button:hover {
-                background-color: rgb(109, 42, 109);
-                color: white;
-            }
+    .content {
+        padding: 50px 45px;
+        text-align: center;
+    }
 
-            input, select, textarea {
-                padding: 10px;
-                border-radius: 10px;
-                border: 1px solid #ccc;
-                width: 100%;
-            }
+    .icon {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
 
-            label {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
+    h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Upload a Excel / CSV File</h1>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_table}}
-                <button type="submit">Upload</button>
-            </form>
-        </div>
-    </body>
+    .description {
+        color: #6b7280;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    form p {
+        width: 100%;
+        max-width: 550px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #374151;
+    }
+
+    input[type="file"] {
+        width: 100%;
+        padding: 14px;
+        border: 2px dashed #b7c9dc;
+        border-radius: 10px;
+        background: #f8fbfe;
+        cursor: pointer;
+    }
+
+    button {
+        width: 100%;
+        max-width: 550px;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background: #1f4e79;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #163a5c;
+    }
+
+    .supported {
+        margin-top: 20px;
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 20px;
+        color: #1f4e79;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 15px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 13px;
+        border-top: 1px solid #e5e7eb;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+```
+<div class="header">
+    DATA REPORTING SYSTEM
+</div>
+
+<div class="content">
+
+    <div class="icon">📁</div>
+
+    <h1>Upload Your Data File</h1>
+
+    <p class="description">
+        Select a CSV or Excel file to process the data and generate
+        an automated summary report.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Upload & Generate Report
+        </button>
+
+    </form>
+
+    <p class="supported">
+        Supported formats: CSV and XLSX
+    </p>
+
+    <a href="{% url 'home' %}" class="back">
+        ← Back to Home
+    </a>
+
+</div>
+
+<div class="footer">
+    Automated Data Processing & Reporting System
+</div>
+```
+
+</div>
+
+</body>
 </html>

@@ -1,61 +1,155 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                background: linear-gradient(to bottom right, #e8eadb, rgb(174, 93, 174));
-                color: white;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                text-align: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Reporting System</title>
 
-            .container {
-                background-color: rgb(182, 120, 182);
-                padding: 40px 40px 50px 40px;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px white;
-                max-width: 800px;
-                width: 80%;
-            }
+```
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-            h1 {
-                margin-bottom: 20px;
-                font-size: 3rem;
-                text-shadow: 3.5px 3.5px rgb(62, 60, 60);
-            }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        background: #f4f7fb;
+        color: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            .button {
-                background-color: beige;
-                color: black;
-                border: none;
-                padding: 15px 25px;
-                border-radius: 30px;
-                text-decoration: none;
-                font-size: 1rem;
-                cursor: pointer;
-                display: inline-block;
-                transition: all 0.3s ease;
-            }
+    .wrapper {
+        width: 90%;
+        max-width: 1000px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+    }
 
-            .button:hover {
-                background-color: rgb(109, 42, 109);
-                color: white;
-            }
+    .header {
+        background: #1f4e79;
+        color: white;
+        padding: 18px 35px;
+        font-size: 18px;
+        font-weight: bold;
+    }
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Welcome to the Home Page!</h1>
-            <a href="{% url 'upload' %}" class="button">To Upload Click Here !!!</a>
-        </div>
-    </body>
+    .content {
+        padding: 70px 40px;
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 38px;
+        margin-bottom: 15px;
+        color: #1f2937;
+    }
+
+    .subtitle {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        color: #6b7280;
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .flow {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 30px 0;
+    }
+
+    .step {
+        background: #eef5fb;
+        color: #1f4e79;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 30px;
+        background: #1f4e79;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background: #163a5c;
+    }
+
+    .footer {
+        padding: 15px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 13px;
+        border-top: 1px solid #e5e7eb;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+```
+<div class="header">
+    DATA REPORTING SYSTEM
+</div>
+
+<div class="content">
+
+    <div class="icon">📊</div>
+
+    <h1>Data Uploader & Email Reporting</h1>
+
+    <p class="subtitle">
+        Upload your CSV or Excel file, process the data automatically,
+        generate a summary report, and receive the report through email.
+    </p>
+
+    <div class="flow">
+        <div class="step">📁 Upload File</div>
+        <div class="step">⚙️ Process Data</div>
+        <div class="step">📊 Generate Report</div>
+        <div class="step">📧 Send Email</div>
+    </div>
+
+    <a href="{% url 'upload' %}" class="button">
+        Upload & Generate Report
+    </a>
+
+</div>
+
+<div class="footer">
+    Automated Data Processing & Reporting System
+</div>
+```
+
+</div>
+
+</body>
 </html>
